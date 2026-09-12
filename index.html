@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>惠州 4 天 3 晚 · 旅行手册</title>
+<style>
+:root{
+  --ink:#0d3b40;      /* 地点/名称/标题 */
+  --time:#5f7d85;     /* 时间（专用） */
+  --teal:#12657c;     /* 链接/可点击 */
+  --price:#8a6a3b;    /* 价格/费用（专用） */
+  --warn:#b23b3b;     /* 警示：唯一红色 */
+  --meta:#7a8a8d;     /* 元信息/来源标签 */
+  --mark:#f3ead6;     /* 文字底色高亮（最重档，全页 ≤3 处） */
+  --paper:#f6f4ee;
+  --panel:#fffdf8;
+  --line:rgba(13,59,64,.10);
+  --line2:rgba(13,59,64,.06);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:PingFang SC,"Microsoft YaHei",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+  font-size:15.5px;line-height:1.72;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:700px;margin:0 auto;padding:0 18px}
+
+/* ── 顶部导航 ───────────────────────────── */
+.topnav{
+  position:sticky;top:0;z-index:50;background:rgba(246,244,238,.94);
+  backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.topnav-in{
+  max-width:700px;margin:0 auto;display:flex;gap:2px;overflow-x:auto;
+  padding:9px 14px;scrollbar-width:none;
+}
+.topnav-in::-webkit-scrollbar{display:none}
+.topnav a{
+  flex:0 0 auto;color:var(--teal);text-decoration:none;font-size:13px;
+  padding:6px 10px;border-radius:999px;white-space:nowrap;line-height:1.4;
+  border:1px solid transparent;
+}
+.topnav a.on{background:rgba(18,101,124,.10);border-color:rgba(18,101,124,.22);font-weight:600}
+
+/* ── 封面 ───────────────────────────────── */
+.cover{position:relative;min-height:430px;display:flex;align-items:flex-end;overflow:hidden;background:#0d3b40}
+.cover-img{
+  position:absolute;inset:0;background-image:url("huizhou-guide_files/shuangyuewan.jpg");
+  background-size:cover;background-position:center 42%;opacity:.46;
+}
+.cover-veil{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(6,32,36,.30) 0%,rgba(6,32,36,.55) 46%,rgba(6,32,36,.90) 100%);
+}
+.cover-in{position:relative;width:100%;max-width:700px;margin:0 auto;padding:0 18px 30px}
+.cover-kicker{
+  color:#a8ccd2;font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;
+  margin:0 0 12px;font-weight:600;
+}
+.cover h1{
+  color:#f4fbfb;font-size:40px;line-height:1.16;margin:0 0 12px;letter-spacing:.01em;font-weight:700;
+}
+.cover-sub{color:#cfe4e7;font-size:14.5px;margin:0 0 20px;line-height:1.68}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{
+  display:inline-block;padding:5px 11px;border-radius:999px;font-size:12.5px;line-height:1.4;
+  border:1px solid rgba(255,255,255,.28);color:#e6f2f3;background:rgba(255,255,255,.09);
+}
+
+/* ── 区域标题 ───────────────────────────── */
+section{padding:40px 0 4px}
+.sec-h{display:flex;align-items:baseline;gap:11px;margin:0 0 6px}
+.sec-n{
+  font-size:13px;font-weight:700;color:var(--teal);letter-spacing:.06em;
+  border:1px solid rgba(18,101,124,.30);border-radius:6px;padding:2px 7px;line-height:1.35;flex:0 0 auto;
+}
+.sec-h h2{font-size:24px;margin:0;letter-spacing:.01em;font-weight:700}
+.sec-h .en{font-size:12px;color:var(--meta);font-weight:400;letter-spacing:.08em;text-transform:uppercase}
+.sec-lead{color:#33575c;font-size:14.5px;margin:8px 0 20px;line-height:1.75}
+
+/* ── 卡片 ───────────────────────────────── */
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  padding:16px 16px 15px;margin:0 0 14px;overflow:hidden;
+  box-shadow:0 1px 2px rgba(13,59,64,.03);
+}
+.card-img-wrap{margin:-16px -16px 14px}
+.card-img{width:100%;height:172px;object-fit:cover;display:block;background:#e8e4da}
+.card h3{margin:0 0 5px;font-size:17.5px;line-height:1.45;letter-spacing:.005em;font-weight:700}
+.card h3 .local{font-size:13px;color:var(--meta);font-weight:400;margin-left:6px;letter-spacing:0}
+.card .one{color:#3a5b5f;font-size:14px;margin:0 0 11px;line-height:1.7}
+.card p{margin:0 0 9px;font-size:14px;line-height:1.75;color:#2c4c50}
+.card p:last-child{margin-bottom:0}
+
+/* 元信息行 */
+.meta{
+  font-size:12.5px;color:var(--meta);margin:0 0 9px;line-height:1.7;
+  display:flex;flex-wrap:wrap;gap:4px 12px;
+}
+.meta b{color:#4d6d71;font-weight:600}
+.tagline{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 11px}
+.tag{
+  font-size:11.5px;padding:3px 9px;border-radius:999px;line-height:1.5;
+  border:1px solid rgba(13,59,64,.16);color:#3a6065;background:rgba(13,59,64,.035);
+}
+.tag.hot{border-color:rgba(178,59,59,.28);color:var(--warn);background:rgba(178,59,59,.05)}
+.tag.res{border-color:rgba(18,101,124,.30);color:var(--teal);background:rgba(18,101,124,.06)}
+
+/* 语义标注 */
+.t{color:var(--time);font-variant-numeric:tabular-nums}       /* 时间 */
+.pr{color:var(--price);font-weight:600;font-variant-numeric:tabular-nums} /* 价格 */
+a.lk{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(18,101,124,.32)}
+a.lk:hover{border-bottom-color:var(--teal)}
+.warn{color:var(--warn)}
+.mk{background:var(--mark);padding:1px 4px;border-radius:3px;color:var(--ink)}
+b.pl{color:var(--ink);font-weight:600}
+
+/* 操作行 */
+.acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0 0}
+.nav-btn{
+  font:inherit;font-size:13px;font-weight:600;color:#fff;background:var(--teal);
+  border:0;border-radius:9px;padding:9px 15px;min-height:38px;cursor:pointer;line-height:1.3;
+}
+.nav-btn:active{opacity:.82}
+.act-lk{
+  font-size:13px;color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(18,101,124,.32);
+  padding:8px 2px;
+}
+
+/* ── 时间轴（行程） ──────────────────────── */
+.day{
+  background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  padding:17px 16px 15px;margin:0 0 15px;box-shadow:0 1px 2px rgba(13,59,64,.03);
+}
+.day-h{display:flex;align-items:baseline;gap:10px;margin:0 0 3px;flex-wrap:wrap}
+.day-n{
+  font-size:11.5px;font-weight:700;color:#fff;background:var(--teal);
+  border-radius:6px;padding:3px 8px;line-height:1.4;letter-spacing:.04em;flex:0 0 auto;
+}
+.day-h h3{margin:0;font-size:18.5px;font-weight:700;letter-spacing:.005em}
+.day-date{font-size:12.5px;color:var(--meta);margin:0 0 13px}
+.tl{list-style:none;margin:0;padding:0 0 0 68px;position:relative}
+.tl::before{content:"";position:absolute;left:57px;top:6px;bottom:8px;width:1px;background:var(--line)}
+.tl li{position:relative;padding:0 0 13px;font-size:14px;line-height:1.72;color:#2c4c50}
+.tl li:last-child{padding-bottom:0}
+.tl .t{
+  position:absolute;left:-68px;top:1px;width:48px;text-align:right;
+  font-size:12.5px;font-weight:600;
+}
+.tl .dot{
+  position:absolute;left:-13.5px;top:7px;width:8px;height:8px;border-radius:50%;
+  background:var(--teal);box-shadow:0 0 0 3px var(--panel);
+}
+.tl b{color:var(--ink);font-weight:600}
+.tl .note{display:block;color:var(--time);font-size:12.5px;margin-top:2px;line-height:1.65}
+.mealbox{
+  margin:13px 0 0;padding:11px 13px;border-radius:10px;
+  background:rgba(13,59,64,.035);border:1px solid var(--line2);font-size:13.5px;line-height:1.75;
+}
+.mealbox div{margin:0 0 3px;color:#2c4c50}
+.mealbox div:last-child{margin-bottom:0}
+.mealbox b{color:var(--ink);font-weight:600}
+
+/* ── 通用分节标题（模块4 子类） ──────────── */
+.sub-h{
+  font-size:15.5px;font-weight:700;margin:26px 0 13px;padding:0 0 8px;
+  border-bottom:1px solid var(--line);letter-spacing:.01em;
+}
+.sub-h:first-of-type{margin-top:6px}
+.sub-h span{color:var(--meta);font-size:12px;font-weight:400;margin-left:7px;letter-spacing:.06em}
+
+/* ── 表格 ───────────────────────────────── */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 14px;
+  border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+table.tbl{border-collapse:collapse;width:100%;font-size:13.5px}
+table.tbl th{
+  text-align:left;font-weight:600;color:var(--ink);background:rgba(13,59,64,.045);
+  padding:10px 12px;font-size:13px;border-bottom:1px solid var(--line);white-space:nowrap;
+}
+table.tbl td{padding:10px 12px;border-bottom:1px solid var(--line2);color:#2c4c50;line-height:1.6;vertical-align:top}
+table.tbl tr:last-child td{border-bottom:0}
+table.tbl td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
+
+/* ── 模块7 ──────────────────────────────── */
+.unsch{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  padding:15px 16px;margin:0 0 12px;box-shadow:0 1px 2px rgba(13,59,64,.03)}
+.unsch.pick{border-color:rgba(18,101,124,.46);background:rgba(18,101,124,.045)}
+.unsch-h{display:flex;align-items:flex-start;gap:11px;margin:0 0 8px}
+.unsch-h input[type=checkbox]{
+  flex:0 0 auto;width:20px;height:20px;margin:3px 0 0;accent-color:var(--teal);cursor:pointer;
+}
+.unsch-h h3{margin:0;font-size:16.5px;line-height:1.5;font-weight:700}
+.unsch-h h3 .local{font-size:12.5px;color:var(--meta);font-weight:400;margin-left:6px}
+.unsch-in{padding-left:31px}
+.unsch-in .why{font-size:13.5px;color:#2c4c50;margin:0 0 8px;line-height:1.72}
+.unsch-in .why b{color:var(--ink);font-weight:600}
+.unsch .meta{margin-bottom:9px}
+.genbox{
+  margin:24px 0 0;padding:16px;border-radius:14px;
+  background:rgba(18,101,124,.055);border:1px solid rgba(18,101,124,.20);
+}
+.genbox h3{margin:0 0 6px;font-size:16px;font-weight:700}
+.genbox p{margin:0 0 12px;font-size:13.5px;color:#2c4c50;line-height:1.7}
+.genbox textarea{
+  width:100%;min-height:150px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:12.5px;line-height:1.6;padding:12px;border-radius:10px;resize:vertical;
+  border:1px solid var(--line);background:#fff;color:var(--ink);
+}
+.btn-row{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:11px 0 0}
+.btn{
+  font:inherit;font-size:13.5px;font-weight:600;border-radius:9px;padding:10px 17px;
+  min-height:42px;cursor:pointer;line-height:1.3;border:1px solid var(--teal);
+  background:var(--teal);color:#fff;
+}
+.btn.ghost{background:transparent;color:var(--teal)}
+.btn:active{opacity:.82}
+.copy-msg{font-size:12.5px;color:var(--teal);font-weight:600}
+
+/* ── 页脚 ───────────────────────────────── */
+footer{
+  margin:44px 0 0;padding:26px 0 40px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--meta);line-height:1.85;
+}
+footer p{margin:0 0 6px}
+footer b{color:#4d6d71;font-weight:600}
+
+/* ── 响应式 ─────────────────────────────── */
+@media (max-width:520px){
+  body{font-size:15px}
+  .wrap,.cover-in{padding-left:15px;padding-right:15px}
+  .topnav-in{padding-left:12px;padding-right:12px}
+  .cover{min-height:390px}
+  .cover h1{font-size:31px}
+  .cover-sub{font-size:13.5px}
+  .sec-h h2{font-size:21px}
+  section{padding:34px 0 4px}
+  .card-img{height:158px}
+  .tl{padding-left:60px}
+  .tl::before{left:50px}
+  .tl .t{left:-60px;width:42px}
+  .tl .dot{left:-13.5px}
+  table.tbl{min-width:520px;font-size:13px}
+  table.tbl th,table.tbl td{padding:9px 11px}
+}
+@media (max-width:430px){
+  body{font-size:14.5px}
+  .cover h1{font-size:28px}
+  .cover{min-height:360px}
+  .cover-in{padding-bottom:24px}
+  .card{padding:15px 14px 14px}
+  .card-img-wrap{margin:-15px -14px 13px}
+  .card-img{height:146px}
+  .tl{padding-left:54px}
+  .tl::before{left:45px}
+  .tl .t{left:-54px;width:38px;font-size:12px}
+  .tl .dot{left:-12.5px}
+  .day{padding:15px 14px 13px}
+  .unsch{padding:14px}
+  .unsch-in{padding-left:0;margin-top:4px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav"><div class="topnav-in">
+<a href="#itinerary">行程</a>
+<a href="#attractions">景点</a>
+<a href="#experiences">体验</a>
+<a href="#dining">餐饮住宿</a>
+<a href="#shopping">购物</a>
+<a href="#tips">当地贴士</a>
+<a href="#unscheduled">未安排清单</a>
+</div></nav>
+
+<header class="cover">
+  <div class="cover-img"></div>
+  <div class="cover-veil"></div>
+  <div class="cover-in">
+    <p class="cover-kicker">Huizhou · Guangdong</p>
+    <h1>惠州<br>半城山色半城湖</h1>
+    <p class="cover-sub">
+      9 月 24 日 – 9 月 27 日 · 4 天 3 晚 · 一人独行<br>
+      夜航落地 → 西湖老城 → 罗浮山 → 双月湾海岸 → 直飞返京
+    </p>
+    <div class="chips">
+      <span class="chip">客家东江菜</span>
+      <span class="chip">5A 西湖</span>
+      <span class="chip">道教名山</span>
+      <span class="chip">双月湾日出</span>
+      <span class="chip">海鲜现捞</span>
+    </div>
+  </div>
+</header>
+
+<section id="itinerary"><div class="wrap">
+  <div class="sec-h">
+    <span class="sec-n">01</span>
+    <h2>行程</h2>
+    <span class="en">Itinerary</span>
+  </div>
+  <p class="sec-lead">
+    这趟行程的骨架由两段航程决定：<b class="pl">9/24 夜里 23:50 落地惠州</b>，<b class="pl">9/27 中午 12:50 起飞返京</b>，
+    所以真正完整可用的白天是 <b class="pl">9/25、9/26 两天</b>，加 9/27 的一个上午。惠州没有地铁，
+    景点又分三片散在惠城、博罗、惠东，因此我把它压成「<b class="pl">一天一个片区</b>」——
+    老城住宿只订一个基地，海边那晚单独住，避免来回折返吃掉半天。
+  </p>
+
+  <div class="day">
+    <div class="day-h"><span class="day-n">DAY 1</span><h3>抵达 · 夜落平潭</h3></div>
+    <p class="day-date">9 月 24 日 周四</p>
+    <ul class="tl">
+      <li><span class="dot"></span><span class="t">18:00</span>
+        <b>北京大兴机场</b>集合值机
+        <span class="note">KN5307 中联航 20:55 起飞。大兴机场值机柜台 B1 层 W / 3 层 R，入口 3 层 11 号门，建议提前 2 小时到。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">20:55</span>
+        <b>KN5307 起飞</b> → 惠州平潭机场 T2
+        <span class="note">航程约 2 小时 55 分。该航线准点率约 63%，平均延误 14 分钟，属正常波动范围。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">23:50</span>
+        <b>落地惠州平潭机场 T2</b>
+        <span class="note">取行李后直接叫车进惠城区。机场在惠阳区，到西湖一带约 30 公里、车程 40 分钟。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">00:40</span>
+        <b>入住惠城区西湖附近酒店</b>，当晚即睡
+        <span class="note">这一晚不安排任何活动——夜航落地最忌讳硬撑出门，第二天才是正日子。</span>
+      </li>
+    </ul>
+    <div class="mealbox">
+      <div><b>晚餐</b>：在飞机上或大兴机场解决，落地后不再觅食。</div>
+      <div><b>住宿建议</b>：住 <b>惠州西湖 / 水东街一带</b>，步行可达次日全部行程。店名见第 4 模块。</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-h"><span class="day-n">DAY 2</span><h3>西湖老城 · 苏东坡的一天</h3></div>
+    <p class="day-date">9 月 25 日 周五</p>
+    <ul class="tl">
+      <li><span class="dot"></span><span class="t">08:00</span>
+        <b>惠州西湖</b>东门进园，先走平湖环线
+        <span class="note">趁早凉人少。从苏堤进、经泗洲塔、九曲桥到孤山，这一段是西湖的精华骨架，约 2 小时走完。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">10:15</span>
+        <b>东坡园 · 东坡纪念馆</b>
+        <span class="note">苏东坡贬惠三年留下的核心遗存，看碑刻与荔枝故事。此处是理解"为什么惠州处处有东坡"的第一站。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">11:30</span>
+        <b>丰渚园</b>（西湖五湖之一）
+        <span class="note">粉墙黛瓦的岭南园林，夏天荷花最好，9 月下旬仍有余韵。逛 40 分钟足够。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">13:00</span>
+        <b>午餐</b>：西湖东门外的老城片区
+        <span class="note">东坡肉、东江盐焗鸡、酿豆腐都在这一带能吃到。店名见第 4 模块。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">14:30</span>
+        <b>朝京门 → 金带街</b>
+        <span class="note">明代城门残段，2005 年按原样重建，城墙上可俯瞰老城。往下走金带街是惠州旧民居肌理最好的一段。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">16:00</span>
+        <b>合江楼</b>（广东六大名楼之一）
+        <span class="note">东江与西枝江交汇处，登楼看两江合流。苏东坡当年就住在这附近。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">17:30</span>
+        <b>水东街</b>夜市开场
+        <span class="note">国家级夜间文旅消费集聚区。先逛骑楼老街，再沿江边走到合江楼看日落。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">19:00</span>
+        <b>晚餐 · 水东街及周边解</b>决
+        <span class="note">水东街的小吃摊密度是全惠州最高的，建议少量多样地吃。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">20:30</span>
+        <b>江边夜游</b>后回酒店
+        <span class="note">水东街夜灯亮到 22:00 前后，走回西湖一带酒店约 15 分钟。全天结束约 21:30。</span>
+      </li>
+    </ul>
+    <div class="mealbox">
+      <div><b>午餐</b>：西湖东门 / 环城西路一带，客家菜与东江菜集中。</div>
+      <div><b>晚餐</b>：水东街片区解决，夜市小吃为主。</div>
+      <div><b>住宿建议</b>：仍住 <b>西湖 / 水东街一带</b>，不用换酒店。</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-h"><span class="day-n">DAY 3</span><h3>罗浮山 · 岭南第一山</h3></div>
+    <p class="day-date">9 月 26 日 周六</p>
+    <ul class="tl">
+      <li><span class="dot"></span><span class="t">07:30</span>
+        <b>出发前往罗浮山</b>（博罗县长宁镇）
+        <span class="note">距惠城区约 45 公里，自驾/包车约 1 小时；打车约 ¥120–150。周六早出发避开上午车流。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">08:40</span>
+        <b>进朱明洞景区</b>，走冲虚观 → 黄龙古观
+        <span class="note">冲虚观是道教十大洞天之一，葛洪炼丹处，是全山人文分量最重的一段。古观香火清幽，早晨几乎没有游客。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">10:30</span>
+        <b>乘索道上山</b>，往飞云顶方向
+        <span class="note">步行登顶飞云顶需 2–3 小时且全程爬升，坐索道可省掉大半体力。索道往返约 ¥128（含门票套票）。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">11:40</span>
+        <b>飞云顶</b>——峰顶平坦如盘
+        <span class="note">罗浮山最高处，可远望东江与博罗平原。山顶风大，带一件薄外套。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">13:00</span>
+        <b>午餐</b>：长宁镇 / 罗浮山景区门口一带
+        <span class="note">这一带以农家窑鸡出名，是博罗的招牌吃法。店名见第 4 模块。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">14:30</span>
+        <b>下山，转场前往惠东双月湾</b>
+        <span class="note">罗浮山 → 双月湾约 110 公里，自驾约 2 小时。这是全程唯一一段较长转场，下午走最合适。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">17:00</span>
+        <b>入住双月湾海景房</b>，先歇脚
+        <span class="note">到得早可以先去沙滩走走。海边住宿这一晚单独订，见第 4 模块。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">18:00</span>
+        <b>双月湾观景台看日落</b>
+        <span class="note">登大星山观景台，一静一动的双月形海湾尽收眼底，是惠州最出片的机位。观景台全天开放，停车 ¥10。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">19:30</span>
+        <b>双月湾海鲜晚餐</b>
+        <span class="note">港口镇一带海鲜大排档沿海排开，现捞现做。店名见第 4 模块。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">21:00</span>
+        <b>回住处</b>，早睡
+        <span class="note">次日若想看日出，5:40 前后天就亮了——这是住海边这一晚的全部意义。</span>
+      </li>
+    </ul>
+    <div class="mealbox">
+      <div><b>午餐</b>：罗浮山景区门口 / 长宁镇一带，窑鸡与农家菜。</div>
+      <div><b>晚餐</b>：双月湾港口镇海鲜大排档片区。</div>
+      <div><b>住宿建议</b>：住 <b>双月湾</b>（惠东县港口镇 / 万科双月湾一带），仅此一晚，为看日出。</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-h"><span class="day-n">DAY 4</span><h3>海边清晨 · 返程</h3></div>
+    <p class="day-date">9 月 27 日 周日</p>
+    <ul class="tl">
+      <li><span class="dot"></span><span class="t">05:40</span>
+        <b>双月湾日出</b>（自愿）
+        <span class="note">9 月下旬日出约 6:00 前后。住的房间若朝正东，阳台上就能看，不必再出门。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">07:30</span>
+        <b>酒店早餐 / 海边散步</b>
+        <span class="note">退房前把行李收好，海边行程到此为止。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">08:15</span>
+        <b>出发前往平潭机场</b>
+        <span class="note">双月湾 → 惠州平潭机场约 80 公里、车程 1 小时 15 分。这一段务必留足，路上有县道。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">10:45</span>
+        <b>抵达惠州平潭机场 T2</b>，值机
+        <span class="note">KN5362 中联航 12:50 起飞。机场不大，提前 1.5 小时到足够。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">12:50</span>
+        <b>KN5362 起飞</b> → 北京大兴
+        <span class="note">航程约 3 小时 15 分，16:05 落地大兴。</span>
+      </li>
+      <li><span class="dot"></span><span class="t">16:05</span>
+        <b>落地北京大兴国际机场</b>
+        <span class="note">取行李后乘大兴机场线进城，转高铁回天津（详见下方"返程衔接"）。</span>
+      </li>
+    </ul>
+    <div class="mealbox">
+      <div><b>早餐</b>：双月湾住处。</div>
+      <div><b>午餐</b>：机场或机上解决。</div>
+      <div><b>住宿</b>：当晚回天津家中。</div>
+    </div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>返程衔接 · 9 月 27 日</th><th>时刻</th><th>费用参考</th></tr></thead>
+      <tbody>
+        <tr><td>KN5362 落地大兴</td><td class="t">16:05</td><td class="pr">机票 ¥780</td></tr>
+        <tr><td>大兴机场 → 北京南站（大兴机场线转 10 号线）</td><td class="t">约 70 分钟</td><td class="pr">¥40 前后</td></tr>
+        <tr><td>北京南 → 天津（京津城际）</td><td class="t">30–40 分钟</td><td class="pr">¥55（二等座）</td></tr>
+        <tr><td>预计抵达天津站</td><td class="t">20:30 前后</td><td class="pr">合计约 ¥875</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="sec-lead" style="margin-top:-4px">
+    <span class="warn">京津城际末班车较晚但周末票紧张</span>，建议出发前就在 12306 上把 19:00–21:00 段的车次订好，
+    别落地才买。若嫌进城折腾，也可选 9/27 中午 12:50 这班直接飞首都机场的国航 CA1918（<span class="pr">¥980</span>，
+    10:50 起飞），但那就得放弃双月湾的清晨。
+  </p>
+</div></section>
+
+<section id="attractions"><div class="wrap">
+  <div class="sec-h">
+    <span class="sec-n">02</span>
+    <h2>景点</h2>
+    <span class="en">Attractions</span>
+  </div>
+  <p class="sec-lead">
+    惠州的山海湖城三样都占，但这三样离得很远——西湖在惠城，罗浮山在博罗，双月湾与巽寮湾在惠东，
+    互相都是一小时以上的车程。下面按<b class="pl">你实际会走到的顺序</b>排，不按名气排。
+  </p>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/westlake.jpg" alt="惠州西湖，岭南园林风格的亭台与湖面"></div>
+    <h3>惠州西湖<span class="local">国家 5A 级景区</span></h3>
+    <p class="one">与杭州西湖同名，但气质完全不同——它是岭南的、温润的、住着人的湖。</p>
+    <div class="tagline"><span class="tag hot">必去</span><span class="tag">免费</span><span class="tag">晨间最佳</span></div>
+    <div class="meta">
+      <span><b>开放时间</b> <span class="t">07:00–22:30</span>（夏季）/ <span class="t">06:30–22:00</span>（冬季）</span>
+      <span><b>门票</b> <span class="pr">免费</span></span>
+      <span><b>建议时长</b> 2–3 小时</span>
+    </div>
+    <p>
+      由"五湖六桥八景"组成，核心景点集中在平湖。环湖走一圈是惠州最舒服的城市行走——
+      湖北面的下角东路、下角中路是惠州最老的生活区，绿树成荫，本地人在湖边喝茶打牌，
+      这种"湖是活的"的感觉是它跟多数景区最大的区别。游船可选手桨或电动船。
+    </p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('惠州西湖', 23.09551, 114.40088, 'https://j.map.baidu.com/huizhouxihu')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/huizhouxihu" target="_blank" rel="noopener">百度地图</a>
+      <a class="act-lk" href="http://www.hzxihu.net/Web/HomePage" target="_blank" rel="noopener">景区官网</a>
+    </div>
+    <p class="meta" style="margin-top:11px"><b>来源</b> 惠州市西湖景区官网 / 惠州文旅发布 · 开放时间以景区当日公示为准</p>
+  </div>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/sudongpo.jpg" alt="苏东坡纪念地，碑刻与古树"></div>
+    <h3>东坡园 · 东坡纪念馆<span class="local">西湖孤山</span></h3>
+    <p class="one">苏东坡贬谪惠州三年，把这座城写进了中国文学史——这里是他留下的核心遗存。</p>
+    <div class="tagline"><span class="tag hot">必去</span><span class="tag">免费</span><span class="tag">人文</span></div>
+    <div class="meta">
+      <span><b>开放时间</b> 随西湖景区 <span class="t">07:00–22:30</span></span>
+      <span><b>门票</b> <span class="pr">免费</span></span>
+      <span><b>建议时长</b> 1 小时</span>
+    </div>
+    <p>
+      在西湖孤山上，分五个功能区。惠州人自称"半城山色半城湖"就是从苏东坡的诗里长出来的。
+      纪念馆里最值得看的是碑廊与东坡在惠州的年表——看完这张表，你再走在惠州街上会完全不一样。
+    </p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('惠州西湖东坡园', 23.09350, 114.39900, 'https://j.map.baidu.com/huizhoudongpoyuan')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/huizhoudongpoyuan" target="_blank" rel="noopener">百度地图</a>
+    </div>
+    <p class="meta" style="margin-top:11px"><b>来源</b> 惠州市西湖景区官网</p>
+  </div>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/luofushan.jpg" alt="罗浮山，山间古观与云雾"></div>
+    <h3>罗浮山<span class="local">博罗县长宁镇 · 国家 5A 级景区</span></h3>
+    <p class="one">广东四大名山之首，道教十大洞天之一——葛洪在这里炼丹，写下了《抱朴子》。</p>
+    <div class="tagline"><span class="tag hot">必去</span><span class="tag res">建议索道</span><span class="tag">体能耗</span></div>
+    <div class="meta">
+      <span><b>开放时间</b> <span class="t">07:00–18:00</span></span>
+      <span><b>门票</b> <span class="pr">成人 ¥43</span> · 门票+索道往返 <span class="pr">¥128</span></span>
+      <span><b>建议时长</b> 半天</span>
+    </div>
+    <p>
+      景区面积很大，全山走完需要一整天。对你的日程来说，正确打法是<b class="pl">只取朱明洞核心区 + 索道登顶</b>：
+      先看冲虚观、黄龙古观这段人文，再坐索道上飞云顶。
+      步行走完全程登顶需 2–3 小时且持续爬升，坐索道能省掉大半体力，把时间留给后面的转场。
+    </p>
+    <p class="meta">
+      <span><b>索道</b> <span class="pr">¥70</span>（单程）/ <span class="pr">¥128</span>（含门票往返套票）</span>
+      <span><b>地址</b> 惠州市博罗县长宁镇罗浮山风景名胜区</span>
+    </p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('罗浮山风景名胜区', 23.194828, 114.069999, 'https://j.map.baidu.com/luofushan')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/luofushan" target="_blank" rel="noopener">百度地图</a>
+    </div>
+    <p class="meta" style="margin-top:11px"><b>来源</b> 携程景点页（评分 4.6）· 票价以景区实时公示为准</p>
+  </div>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/shuangyuewan.jpg" alt="双月湾，海面与海岸线"></div>
+    <h3>双月湾观景台<span class="local">惠东县港口镇大星山</span></h3>
+    <p class="one">一边平静如镜、一边波涛翻涌，两弯海湾并排铺开——惠州最出片的一个机位。</p>
+    <div class="tagline"><span class="tag hot">必去</span><span class="tag">日落</span><span class="tag">免费</span></div>
+    <div class="meta">
+      <span><b>开放时间</b> 全天开放（观景台约 <span class="t">06:00–20:00</span>）</span>
+      <span><b>门票</b> <span class="pr">免费</span>（停车 <span class="pr">¥10</span>）</span>
+      <span><b>最佳时段</b> 日落前后</span>
+    </div>
+    <p>
+      登大星山观景台俯瞰整个双月湾。之所以叫双月，是因为两侧海湾一静一动，
+      从山上看确实是两个并排的月牙。日落时分光线最好，也最挤——建议比日落早到 40 分钟占位。
+    </p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('双月湾观景台', 22.597229, 114.906851, 'https://j.map.baidu.com/shuangyuewan')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/shuangyuewan" target="_blank" rel="noopener">百度地图</a>
+    </div>
+    <p class="meta" style="margin-top:11px"><b>来源</b> 携程景点页（评分 4.5）· 同程景点页（评分 3.9）</p>
+  </div>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/xunliaowan.jpg" alt="巽寮湾，礁石海岸与海水"></div>
+    <h3>巽寮湾<span class="local">惠东县平海镇 · 金海湾大道</span></h3>
+    <p class="one">惠州开发最早、配套最全的海湾，沙质细，踩沙踏浪与出海项目都从这里下水。</p>
+    <div class="tagline"><span class="tag">可选</span><span class="tag">免费海滩</span><span class="tag">项目另购</span></div>
+    <div class="meta">
+      <span><b>开放时间</b> 全天</span>
+      <span><b>门票</b> 海滩 <span class="pr">免费</span>，水上项目另购</span>
+      <span><b>建议时长</b> 2–3 小时</span>
+    </div>
+    <p>
+      海滩本身免费。它的价值在于<b class="pl">活动密度</b>——帆船体验、快艇出海、浮潜、游艇都在这一片。
+      对你来说它是双月湾的可选补充：如果 Day 3 到双月湾后还想再玩点动的，巽寮湾离得很近，第二天上午可顺手来一趟。
+      磨子石公园（奇石海岸）也在同一片区。
+    </p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('巽寮湾', 22.689063, 114.747951, 'https://j.map.baidu.com/xunliaowan')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/xunliaowan" target="_blank" rel="noopener">百度地图</a>
+    </div>
+    <p class="meta" style="margin-top:11px"><b>来源</b> 携程景点页（评分 4.5）· 项目价格以现场公示为准</p>
+  </div>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/chaojingmen.jpg" alt="朝京门，明代城门与城墙"></div>
+    <h3>朝京门<span class="local">惠城区环城西路</span></h3>
+    <p class="one">明代城门残段，2005 年按原样重建——惠州"城"这个概念的实体坐标。</p>
+    <div class="tagline"><span class="tag">顺路</span><span class="tag">免费</span><span class="tag">登高看老城</span></div>
+    <div class="meta">
+      <span><b>开放时间</b> 外观全天可看</span>
+      <span><b>门票</b> <span class="pr">免费</span></span>
+      <span><b>建议时长</b> 30 分钟</span>
+    </div>
+    <p>
+      建于明代，见证六百余年，后被战火损毁后重建。最佳机位在城门楼前与城墙旁侧梯。
+      它和西湖、金带街在同一条步行线上，是 Day 2 下午顺路的一站，不必专门跑。
+    </p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('朝京门', 23.099246, 114.404495, 'https://j.map.baidu.com/chaojingmen')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/chaojingmen" target="_blank" rel="noopener">百度地图</a>
+    </div>
+    <p class="meta" style="margin-top:11px"><b>来源</b> 惠州文旅体 / 惠州发布</p>
+  </div>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/hejianglou.jpg" alt="合江楼，夜间亮灯的古楼与江面"></div>
+    <h3>合江楼<span class="local">惠城区水东街 · 广东六大名楼之一</span></h3>
+    <p class="one">东江与西枝江在此交汇，苏东坡谪惠时曾居于此——惠州最硬的一个地标。</p>
+    <div class="tagline"><span class="tag hot">必去</span><span class="tag">日落</span><span class="tag">夜景</span></div>
+    <div class="meta">
+      <span><b>开放时间</b> 外观全天；楼体开放时间以现场公示为准</span>
+      <span><b>门票</b> <span class="pr">免费</span></span>
+      <span><b>建议时长</b> 40 分钟</span>
+    </div>
+    <p>
+      登楼可看两江合流。它的最佳打开方式不是白天看楼，而是<b class="pl">傍晚从水东街走过去</b>——
+      先逛老街，再走到合江楼看日落，灯亮起来之后回望水东街，整个老城的天际线就完整了。
+    </p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('合江楼', 23.091956, 114.409499, 'https://j.map.baidu.com/hejianglou')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/hejianglou" target="_blank" rel="noopener">百度地图</a>
+    </div>
+    <p class="meta" style="margin-top:11px"><b>来源</b> 惠州文旅体 / 惠州发布</p>
+  </div>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/shuidong.jpg" alt="水东街，骑楼老街与红灯笼"></div>
+    <h3>水东街<span class="local">惠城区水东西路 · 国家级夜间文旅消费集聚区</span></h3>
+    <p class="one">惠州唯一一条"晚上比白天好看"的街——骑楼、灯笼、老字号小吃连成一片。</p>
+    <div class="tagline"><span class="tag hot">必去</span><span class="tag">夜市</span><span class="tag">免费</span></div>
+    <div class="meta">
+      <span><b>最佳时段</b> <span class="t">17:30 以后</span></span>
+      <span><b>门票</b> <span class="pr">免费</span></span>
+      <span><b>建议时长</b> 2 小时（含晚餐）</span>
+    </div>
+    <p>
+      近年活化后的骑楼街区，是国家级夜间文化和旅游消费集聚区。惠州几家有名的小吃都在这条街上或附近：
+      朱记食店的"阿嬷叫"、兴记甘蔗冰、绝醒广西酸嘢。晚餐也可以直接在这里的大排档解决。
+    </p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('水东街', 23.091371, 114.409863, 'https://j.map.baidu.com/shuidongjie')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/shuidongjie" target="_blank" rel="noopener">百度地图</a>
+    </div>
+    <p class="meta" style="margin-top:11px"><b>来源</b> 惠州文旅发布 / 大众点评</p>
+  </div>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/honghuahu.jpg" alt="红花湖，山间湖泊与绿道"></div>
+    <h3>红花湖<span class="local">惠城区 · 西湖景区组成部分</span></h3>
+    <p class="one">惠州人的城市绿道——18 公里环湖自行车道，是本地周末的真实去处。</p>
+    <div class="tagline"><span class="tag">可选</span><span class="tag">骑行</span><span class="tag">免费</span></div>
+    <div class="meta">
+      <span><b>开放时间</b> <span class="t">08:00–22:00</span></span>
+      <span><b>门票</b> <span class="pr">免费</span></span>
+      <span><b>建议时长</b> 2 小时</span>
+    </div>
+    <p>
+      与西湖同属一个景区体系，在惠城区南部。环湖绿道坡度平缓，租辆自行车骑一段是感受惠州日常最快的方式。
+      若 Day 2 走完西湖还有余力、又不想再逛老街，可以把它接在下午。
+    </p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('红花湖景区', 23.068577, 114.36962, 'https://j.map.baidu.com/honghuahu')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/honghuahu" target="_blank" rel="noopener">百度地图</a>
+    </div>
+    <p class="meta" style="margin-top:11px"><b>来源</b> 惠州市西湖景区官网</p>
+  </div>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/hakka.jpg" alt="客家围屋建筑与红灯笼"></div>
+    <h3>客家围屋<span class="local">惠州周边 · 客家建筑遗存</span></h3>
+    <p class="one">惠州是客家文化重镇，围屋是理解"惠州人从哪来"最直观的建筑证据。</p>
+    <div class="tagline"><span class="tag">小众</span><span class="tag">需要核实</span></div>
+    <div class="meta">
+      <span><b>门票</b> 多数 <span class="pr">免费</span>或低价</span>
+      <span><b>建议时长</b> 1 小时</span>
+    </div>
+    <p>
+      惠州下辖博罗、惠东、龙门等地散落着不少客家围屋与古村落。
+      <b class="pl">本手册未把具体某一座围屋排进行程</b>——因为单座围屋通常离主线较远，
+      且开放状况变动频繁，实地去可能遇到不开放或正在修缮。如果你对客家建筑有执念，
+      建议出发前用地图搜"围屋/古村"挑一座顺路的，或到惠州后问酒店前台最新的开放情况。
+    </p>
+    <p class="meta"><b>未能核实到具体门店/单点</b> · 此处给的是方向性指引，以实地与官方最新公告为准</p>
+  </div>
+
+</div></section>
+
+<section id="experiences"><div class="wrap">
+  <div class="sec-h">
+    <span class="sec-n">03</span>
+    <h2>体验</h2>
+    <span class="en">Experiences</span>
+  </div>
+  <p class="sec-lead">
+    惠州能"参与进去"的东西不多，但有四样是别处替代不了的：<b class="pl">合江楼的日落时刻</b>、
+    <b class="pl">双月湾的日出</b>、<b class="pl">出海与浮潜</b>，以及<b class="pl">罗浮山的道教山场</b>。
+  </p>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/sailing.jpg" alt="海面帆船体验"></div>
+    <h3>帆船出海体验<span class="local">巽寮湾 · 玩海时代</span></h3>
+    <p class="one">在惠州唯一能把"海"从风景变成体感的方式。</p>
+    <div class="tagline"><span class="tag">需预约</span><span class="tag">受天气影响</span></div>
+    <div class="meta">
+      <span><b>时长</b> 约 2 小时</span>
+      <span><b>价格</b> <span class="pr">¥92–98 / 人</span></span>
+      <span><b>地点</b> 巽寮湾金海湾大道一带码头</span>
+    </div>
+    <p>
+      巽寮湾海域开阔、风况稳定，帆船体验是当地最成熟的水上项目。双体帆船包船价高（<span class="pr">¥2800 起</span>），
+      单人拼船体验才是对的选择。适合想看海、又不想只是在岸上拍照的人。
+    </p>
+    <p class="meta"><b>预约</b> 携程 / 大众点评搜"巽寮湾 帆船体验"当日可订 · <span class="warn">受风浪影响可能临时取消，行前电话确认</span></p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('巽寮湾玩海时代帆船', 22.689063, 114.747951, 'https://j.map.baidu.com/xunliaowan')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/xunliaowan" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/snorkel.jpg" alt="清澈海水中的浮潜"></div>
+    <h3>三角洲岛 / 桑洲岛 浮潜<span class="local">巽寮湾外海</span></h3>
+    <p class="one">离岸小岛，水色比近岸透——惠州能下水看到点东西的地方主要在这两座岛。</p>
+    <div class="tagline"><span class="tag">需坐船</span><span class="tag res">你有 AOW 证</span></div>
+    <div class="meta">
+      <span><b>时长</b> 半天</span>
+      <span><b>价格</b> 三角洲岛门票+往返快艇 <span class="pr">¥128</span> · 桑洲岛浮潜 <span class="pr">¥438</span></span>
+    </div>
+    <p>
+      你在菲律宾科隆刚潜完沉船，对水下条件应该有判断——如实说：<b class="pl">惠东近岸的能见度与科隆完全不在一个量级</b>，
+      这里更适合当"下水放松"而不是"专程潜水"。持有 AOW 证的话，选有执照俱乐部带队的浮潜/体验潜更稳妥，
+      别在码头临时跟无资质的船家下水。
+    </p>
+    <p class="meta"><b>预约</b> 携程 / 大众点评搜"巽寮湾 三角洲岛"或"小海狮潜水俱乐部" · <span class="warn">务必确认俱乐部资质与保险</span></p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('三角洲岛', 22.68200, 114.74200, 'https://j.map.baidu.com/xunliaowan')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/xunliaowan" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/hotspring.jpg" alt="山间温泉池与山景"></div>
+    <h3>罗浮山泡汤<span class="local">博罗县长宁镇</span></h3>
+    <p class="one">爬完山当天泡温泉，是这条动线上最顺的收尾方式。</p>
+    <div class="tagline"><span class="tag">顺路</span><span class="tag">缓解爬山疲劳</span></div>
+    <div class="meta">
+      <span><b>时长</b> 2–3 小时</span>
+      <span><b>价格</b> 罗浮山嘉宝田森林温泉谷 <span class="pr">¥98</span>（成人）</span>
+    </div>
+    <p>
+      罗浮山麓有多家温泉，嘉宝田 218 线森林温泉谷就在景区旁。
+      <b class="pl">不过要提醒你</b>：Day 3 你已经约定下午要转场去双月湾，
+      泡汤至少吃掉 2 小时，会挤压海边的时间。所以这一条<b class="pl">更适合作为"如果不去双月湾"的替代方案</b>，
+      而不是两样都做。
+    </p>
+    <p class="meta"><b>地址</b> 广东省惠州市博罗县长宁镇围子下村（罗浮山风景区旁）· 价格以现场公示为准</p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('罗浮山嘉宝田森林温泉谷', 23.19000, 114.07600, 'https://j.map.baidu.com/luofushan')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/luofushan" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/haixian.jpg" alt="广东沿海夜市海鲜摊档"></div>
+    <h3>海边夜市 · 现捞现做<span class="local">水东街 / 双月湾港口镇</span></h3>
+    <p class="one">惠州吃海鲜的正确方式不是进店点菜，而是在摊前挑、当场做。</p>
+    <div class="tagline"><span class="tag hot">强烈建议</span><span class="tag">两个片区</span></div>
+    <div class="meta">
+      <span><b>时段</b> <span class="t">17:30–24:00</span></span>
+      <span><b>人均</b> <span class="pr">¥80–150</span></span>
+    </div>
+    <p>
+      两个片区两种性格：<b class="pl">水东街</b>是市区骑楼夜市，小吃密度最高；
+      <b class="pl">双月湾港口镇</b>是海边大排档，白灼海虾、姜葱鱿鱼筒、蒜蓉蒸生蚝、海胆炒饭都是常规操作，
+      海鲜每日新鲜运到。挑店看两点：<b class="pl">有没有本地人在吃</b>、<b class="pl">海鲜是不是当面过秤</b>。
+    </p>
+    <p class="meta">具体店名见第 4 模块</p>
+  </div>
+
+</div></section>
+
+<section id="dining"><div class="wrap">
+  <div class="sec-h">
+    <span class="sec-n">04</span>
+    <h2>餐饮住宿</h2>
+    <span class="en">Dining &amp; Lodging</span>
+  </div>
+  <p class="sec-lead">
+    惠州菜属于<b class="pl">东江菜</b>，是客家菜系的一支，三样招牌是<b class="pl">东江盐焗鸡、梅菜扣肉、客家酿豆腐</b>。
+    海鲜则是惠东沿线的另一条主线。下面每一家都给了具体店名，可以直接搜到、导航过去。
+  </p>
+
+  <h3 class="sub-h">当地小吃 / 街头小吃<span>Local Snacks</span></h3>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/amajiao.jpg" alt="油炸街边小吃"></div>
+    <h3>阿嬷叫<span class="local">惠州街头经典</span></h3>
+    <p class="one">萝卜丝、虾米、葱花裹米浆现炸，外酥内软——惠州人的童年味道。</p>
+    <div class="meta">
+      <span><b>代表店</b> <b class="pl">朱记食店</b></span>
+      <span><b>价格</b> <span class="pr">¥5–10 / 个</span></span>
+      <span><b>位置</b> 惠城区桥东下塘街 12 号</span>
+    </div>
+    <p>
+      朱记食店是开了三十多年的街坊老店，一楼门口现炸现卖，二楼是餐厅。
+      "阿嬷叫"这个名字来自炸制时的声响与形态，趁热吃最好，凉了会回软。
+      店在旧式楼房里，环境很老，正是这种老才值得去。
+    </p>
+    <div class="meta"><b>营业时间</b> <span class="t">11:00–14:00</span> · <span class="t">17:00–21:30</span> · <b>来源</b> 大众点评</div>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('朱记食店', 23.09050, 114.40800, 'https://j.map.baidu.com/zhujishidian')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/zhujishidian" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>东江盐焗鸡<span class="local">惠州三宝之一</span></h3>
+    <p class="one">粗盐裹纸焗出来的鸡，皮色金黄、肉嫩咸香，连骨头都有味——惠州菜的招牌头牌。</p>
+    <div class="meta">
+      <span><b>代表店</b> <b class="pl">宴东江惠州东江菜·盐焗鸡（江北店）</b></span>
+      <span><b>人均</b> <span class="pr">¥60–90</span></span>
+    </div>
+    <p>
+      这家专门做东江菜与盐焗鸡，遵循传统制法，在本地食客中口碑很稳。
+      点法很简单：盐焗鸡是必点，再配一份酿豆腐和一道青菜，就是标准的东江菜组合。
+    </p>
+    <div class="meta"><b>地址</b> 惠城区江北新沥路 T21 创意产业园 · <b>营业时间</b> <span class="t">10:00–14:00</span> · <span class="t">17:30–21:30</span> · <b>来源</b> 大众点评</div>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('宴东江东江菜盐焗鸡江北店', 23.11200, 114.41800, 'https://j.map.baidu.com/yandongjiang')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/yandongjiang" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>梅菜扣肉<span class="local">惠州梅菜 · 客家名菜</span></h3>
+    <p class="one">梅菜吸饱肉汁、肥而不腻——惠州梅菜本身就是国家地理标志产品，这道菜是它的最佳用法。</p>
+    <div class="meta">
+      <span><b>代表店</b> <b class="pl">朱记食店</b> / <b class="pl">乌记饭店</b></span>
+      <span><b>人均</b> <span class="pr">¥50–80</span></span>
+    </div>
+    <p>
+      朱记的梅菜扣肉是招牌之一；乌记饭店藏在中山公园旁，由老祠堂改造，客家酿豆腐煲、香芋腊鸭煲也很有分量，
+      适合多人分享。<b class="pl">乌记建议提前预约</b>，环境陈旧但味道正统。
+    </p>
+    <div class="meta"><b>乌记地址</b> 惠城区五一路中山公园旁 · <b>营业时间</b> <span class="t">11:00–14:00</span> · <span class="t">17:00–21:00</span> · <b>来源</b> 大众点评</div>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('乌记饭店', 23.09550, 114.40200, 'https://j.map.baidu.com/wujifandian')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/wujifandian" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/niangdoufu.jpg" alt="客家酿豆腐，砂锅中的豆腐菜式"></div>
+    <h3>客家酿豆腐<span class="local">客家菜基本功</span></h3>
+    <p class="one">肉馅酿进嫩豆腐再烧，考的是手工——酿得断不断，一口就知道店行不行。</p>
+    <div class="meta">
+      <span><b>代表店</b> <b class="pl">高记惠州风味楼（惠城店）</b></span>
+      <span><b>人均</b> <span class="pr">¥60–90</span></span>
+    </div>
+    <p>
+      开业十多年的老字号，被本地食客视为惠州客家风味的代表之一。酿菜系列（酿豆腐、酿春蛋角）手工精细，
+      盐焗鸡也做得稳，猪红汤是特色。分量足、上菜快，适合正餐。
+    </p>
+    <div class="meta"><b>地址</b> 惠城区滨江东路 37 号 · <b>营业时间</b> <span class="t">09:30–14:00</span> · <span class="t">17:00–22:00</span> · <b>来源</b> 大众点评</div>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('高记惠州风味楼', 23.09800, 114.41500, 'https://j.map.baidu.com/gaojifengweilou')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/gaojifengweilou" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <h3 class="sub-h">值得专程去<span>Worth a Detour</span></h3>
+
+  <div class="card">
+    <h3>黎记大排档<span class="local">惠城区下角慈云路黎屋巷 38 号</span></h3>
+    <p class="one">西湖边上的市井大排档，走地鸡白切得皮爽肉滑——这是惠州人自己会去的那种店。</p>
+    <div class="tagline"><span class="tag hot">值得专程</span><span class="tag">近西湖</span><span class="tag">平价</span></div>
+    <div class="meta">
+      <span><b>招牌</b> 白切鸡 / 五花肉酿蛋 / 自家酿豆腐 / 萝卜干鸡煲</span>
+      <span><b>人均</b> <span class="pr">¥50–80</span></span>
+    </div>
+    <p>
+      <b class="pl">为什么值得专程</b>：它把惠州家常客家菜做得非常正——五花肉酿蛋把咸蛋黄酿进五花肉，
+      甘香丰腴，是别处少见的做法。环境就是普通大排档，但镬气与价格都很实在，很多街坊天天来。
+      位置近元妙古观、离西湖步行不远，Day 2 午餐把它排进去最顺。
+    </p>
+    <div class="meta"><b>地址</b> 惠城区下角慈云路黎屋巷 38 号（近元妙古观）· <b>营业时间</b> <span class="t">11:30–14:00</span> · <span class="t">17:00–21:00</span> · <b>来源</b> 大众点评</div>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('黎记大排档', 23.10300, 114.39200, 'https://j.map.baidu.com/lijidapaidang')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/lijidapaidang" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/yanjuji.jpg" alt="金黄油亮的鸡类菜式"></div>
+    <h3>广窑记 · 客家窑鸡<span class="local">惠城区河南岸惠沙堤二路 86 号</span></h3>
+    <p class="one">果木烧制的古法土窑鸡，上桌整只金黄、皮脆肉嫩，带烟熏果木香——配方据称已申请专利。</p>
+    <div class="tagline"><span class="tag hot">值得专程</span><span class="tag">可停车</span></div>
+    <div class="meta">
+      <span><b>招牌</b> 土窑鸡 / 咸蛋酿五花肉 / 客家酿豆腐</span>
+      <span><b>人均</b> <span class="pr">¥70–110</span></span>
+    </div>
+    <p>
+      <b class="pl">为什么值得专程</b>：窑鸡是惠州除盐焗鸡之外的另一条"鸡"的路线，做法完全不同——
+      以果木在高溫土窯中烧制，风味比普通烧鸡更有层次。店内保留客家古典韵味，门口停车方便。
+      <b class="pl">注意</b>：午市只到 13:30，别拖到下午才去。
+    </p>
+    <div class="meta"><b>营业时间</b> <span class="t">11:00–13:30</span> · <span class="t">17:00–21:00</span> · <b>来源</b> 大众点评</div>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('广窑记客家窑鸡', 23.07900, 114.43700, 'https://j.map.baidu.com/guangyaoji')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/guangyaoji" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/meicaikourou.jpg" alt="带青菜的扣肉类菜式"></div>
+    <h3>满记土窑烧鸡波浪山庄<span class="local">博罗县 · 罗浮山景区附近</span></h3>
+    <p class="one">上过《舌尖上的中国》的农家窑鸡，自家养走地鸡、古法秘方腌制——罗浮山这一站的午餐首选。</p>
+    <div class="tagline"><span class="tag hot">值得专程</span><span class="tag res">Day 3 午餐</span></div>
+    <div class="meta">
+      <span><b>招牌</b> 土窑烧鸡（推荐手撕）/ 土窑猪肉 / 客家酿豆腐 / 卤水鸡胗</span>
+      <span><b>人均</b> <span class="pr">¥70–110</span></span>
+    </div>
+    <p>
+      <b class="pl">为什么值得专程</b>：它几乎是"罗浮山下来吃什么"的标准答案——就在景区外侧的广汕公路旁，
+      山庄面积大、自己饲养走地鸡，窑鸡以高温土窑烧制，皮金黄香脆、肉嫩多汁。手撕着吃风味最好。
+    </p>
+    <div class="meta"><b>地址</b> 广汕公路 324 国道旁（长宁公路收费站侧）· <b>营业时间</b> <span class="t">10:30–20:30</span> · <b>来源</b> 大众点评</div>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('满记土窑烧鸡波浪山庄', 23.19000, 114.06000, 'https://j.map.baidu.com/manjishaoyaoji')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/manjishaoyaoji" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>聚鲜阁海鲜大排档（双月湾店）<span class="local">惠东县港口镇双月湾 213 县道</span></h3>
+    <p class="one">离海步行一分钟，海鲜现点现做——双月湾这一晚的晚餐就交给它。</p>
+    <div class="tagline"><span class="tag hot">值得专程</span><span class="tag">海景</span><span class="tag">有停车场</span></div>
+    <div class="meta">
+      <span><b>招牌</b> 白灼海虾 / 姜葱鱿鱼筒 / 蒜蓉蒸生蚝 / 海胆炒饭 / 清蒸海鱼</span>
+      <span><b>人均</b> <span class="pr">¥100–160</span></span>
+    </div>
+    <p>
+      <b class="pl">为什么值得专程</b>：位置就在双月湾海滩旁，用餐能看海景，是当地被反复提到的海鲜大排档之一。
+      价格实惠、分量足，设有大型停车场。
+      <b class="pl">点单提醒</b>：海鲜按重量计价，下单前当面看清秤与单价；旅游区周末晚市人多，建议 18:00 前到。
+    </p>
+    <div class="meta"><b>营业时间</b> <span class="t">10:00–24:00</span> · <b>来源</b> 大众点评</div>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('聚鲜阁海鲜大排档双月湾店', 22.61000, 114.89500, 'https://j.map.baidu.com/juxiange')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/juxiange" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>YES也是大排档（水东街店）<span class="local">惠城区水东西路 88 号 A5 栋</span></h3>
+    <p class="one">把生猛海鲜做出街头感的年轻派大排档，惠州夜宵场子里氛围最好的一家。</p>
+    <div class="tagline"><span class="tag">夜宵</span><span class="tag">水东街</span></div>
+    <div class="meta">
+      <span><b>招牌</b> 爆膏奶油虾 / 避风塘炒肉蟹 / 调皮椒盐濑尿虾 / 胡椒花螺</span>
+      <span><b>人均</b> <span class="pr">¥100–150</span></span>
+    </div>
+    <p>
+      <b class="pl">为什么值得专程</b>：它就在水东街里，Day 2 晚上逛完街不用挪窝。
+      罗氏虾做的爆膏奶油虾奶香浓郁、虾膏丰腴，是它打响名号的一道。因为是夜宵场，<b class="pl">17:00 才开始营业</b>，
+      安排在晚餐或宵夜正合适。
+    </p>
+    <div class="meta"><b>营业时间</b> 自 <span class="t">17:00</span> 起 · <b>来源</b> 大众点评</div>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('YES也是大排档水东街店', 23.09137, 114.40986, 'https://j.map.baidu.com/shuidongjie')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/shuidongjie" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <h3 class="sub-h">住宿推荐<span>Lodging</span></h3>
+  <p class="sec-lead" style="margin-top:-2px">
+    这趟只订 <b class="pl">两个住宿基地</b>：惠城区西湖/水东街一带住 2 晚（9/24、9/25），
+    双月湾住 1 晚（9/26）。西湖是老城动线的中心，双月湾是为了看日出——中间不搬第三次。
+  </p>
+
+  <div class="card">
+    <h3>惠州西湖曦湖里酒店<span class="local">惠城区 · 近惠州西湖 · 水东街</span></h3>
+    <p class="one">就在水东街国家级夜间文旅消费集聚区旁，湖景房能看到西湖日夜两面。</p>
+    <div class="tagline"><span class="tag res">9/24–25 两晚</span><span class="tag hot">首选</span></div>
+    <div class="meta">
+      <span><b>评分</b> 携程 <b>4.7</b>（3445 条点评）</span>
+      <span><b>档次</b> 高档酒店榜 No.2</span>
+    </div>
+    <p>
+      <b class="pl">为什么住这里</b>：它同时满足两个条件——离西湖步行可达（Day 2 全天动线），
+      又直接贴着水东街（Day 2 晚餐与夜游）。270° 西湖美景房是它的卖点，湖畔夜景是加分项。
+      含免费停车场。
+    </p>
+    <p class="meta"><b>地址</b> 惠城区五四路一带 · <span class="pr">参考价 ¥450–700 / 晚</span>（以平台实时价格为准）</p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('惠州西湖曦湖里酒店', 23.09100, 114.40700, 'https://j.map.baidu.com/xihuli')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/xihuli" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>那拉提酒店（惠州西湖店）<span class="local">惠城区 · 近惠州西湖 · 水东街</span></h3>
+    <p class="one">智能客控、服务口碑很好的一家，位置与上一家几乎重叠——预算更友好时的同类选择。</p>
+    <div class="tagline"><span class="tag res">9/24–25 两晚</span><span class="tag">备选</span></div>
+    <div class="meta">
+      <span><b>评分</b> 携程 <b>4.8</b>（1925 条点评）</span>
+      <span><b>档次</b> 高档酒店榜 No.4</span>
+    </div>
+    <p>
+      <b class="pl">为什么作为备选</b>：评分甚至更高（4.8），早餐评价好、服务评价强。
+      与曦湖里同片区，Day 2 动线完全一样。如果曦湖里当日房价偏高或满房，直接切到这家，行程不用改一行。
+    </p>
+    <p class="meta"><b>地址</b> 惠城区 · 近惠州西湖、水东街 · <span class="pr">参考价 ¥400–650 / 晚</span>（以平台实时价格为准）</p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('那拉提酒店惠州西湖店', 23.09300, 114.40500, 'https://j.map.baidu.com/nalati')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/nalati" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>蜜悦圣托里尼海景度假酒店（惠州惠东双月湾店）<span class="local">惠东县 · 双月湾景区内</span></h3>
+    <p class="one">整栋白色建筑、园景开阔，房间带全海景室内泡池——双月湾拍出来最好看的一家。</p>
+    <div class="tagline"><span class="tag res">9/26 一晚</span><span class="tag hot">首选</span></div>
+    <div class="meta">
+      <span><b>评分</b> 携程 <b>4.8</b>（2844 条点评）</span>
+      <span><b>档次</b> 双月湾美景酒店榜 No.2 · 美食酒店榜 No.1</span>
+    </div>
+    <p>
+      <b class="pl">为什么住这里</b>：Day 4 清晨要看日出，住在景区内就不用摸黑开车。
+      它的房间带全海景室内泡池，泡着看海天是它的核心体验，也正好抵掉 Day 3 从罗浮山一路转场过来的疲劳。
+      含双人下午茶（<span class="t">15:30–17:30</span>）。
+    </p>
+    <p class="meta"><b>位置</b> 惠东县双月湾景区内 · <span class="pr">参考价 ¥600–1100 / 晚</span>（以平台实时价格为准）</p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('蜜悦圣托里尼海景度假酒店双月湾店', 22.60600, 114.89800, 'https://j.map.baidu.com/miyuesantorini')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/miyuesantorini" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>惠州惠东双月湾半岛酒店<span class="local">惠东县 · 双月湾景区内</span></h3>
+    <p class="one">270° 海景、海上日出日落正对着房间——双月湾位置最硬的一家。</p>
+    <div class="tagline"><span class="tag res">9/26 一晚</span><span class="tag">备选</span></div>
+    <div class="meta">
+      <span><b>评分</b> 携程 <b>4.7</b>（1378 条点评）</span>
+      <span><b>档次</b> 双月湾景区内 · 海景泳池</span>
+    </div>
+    <p>
+      <b class="pl">为什么作为备选</b>：同样在双月湾景区内，270° 海景房、海景泳池、公共海滩都在。
+      点评里"日落美景"被反复提到。如果蜜悦满房，这家位置和体验几乎不打折。
+    </p>
+    <p class="meta"><b>位置</b> 惠东县双月湾景区内 · <span class="pr">参考价 ¥500–900 / 晚</span>（以平台实时价格为准）</p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('惠州惠东双月湾半岛酒店', 22.60700, 114.90100, 'https://j.map.baidu.com/bandaohotel')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/bandaohotel" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <p class="sec-lead" style="margin-top:16px">
+    <span class="warn">9/26 是周六</span>，双月湾海景房周末价明显高于平日，且好房间去得很快。
+    9 月虽不在国庆窗口内，但周末 + 滨海度假区的组合足以推高房价——<b class="pl">建议尽早订，并勾选可免费取消</b>。
+    上面两家价格均为参考区间，以携程实时价格为准。
+  </p>
+
+</div></section>
+
+<section id="shopping"><div class="wrap">
+  <div class="sec-h">
+    <span class="sec-n">05</span>
+    <h2>购物</h2>
+    <span class="en">Shopping</span>
+  </div>
+  <p class="sec-lead">
+    惠州不是购物型目的地，但有三样东西值得带走，且都是"只有这里买才对"的类型：
+    <b class="pl">惠州梅菜</b>、<b class="pl">罗浮山药材与凉茶</b>、<b class="pl">岭南时令水果</b>。
+    购物区集中在惠城区老城与江北商圈两片。
+  </p>
+
+  <div class="card">
+    <div class="card-img-wrap"><img class="card-img" src="huizhou-guide_files/shuidong.jpg" alt="老城骑楼街区与红灯笼"></div>
+    <h3>水东街 · 老城商圈<span class="local">惠城区水东西路</span></h3>
+    <p class="one">买手信最顺路的地方——你本来就会来逛夜市，顺手就把东西买了。</p>
+    <div class="tagline"><span class="tag hot">首选</span><span class="tag">顺路</span></div>
+    <div class="meta">
+      <span><b>适合买</b> 梅菜饼干 / 本地手作 / 甘蔗冰</span>
+      <span><b>最佳时段</b> <span class="t">17:30</span> 以后</span>
+    </div>
+    <p>
+      骑楼老街两侧以小吃、手信、杂货为主。有一家"百分饼局（西湖店）"可以买梅菜饼干，包装精美、适合带回去送人。
+      这里买的好处是<b class="pl">不用专门跑一趟</b>，Day 2 晚上逛夜市时一次解决。
+    </p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('水东街', 23.091371, 114.409863, 'https://j.map.baidu.com/shuidongjie')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/shuidongjie" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>华贸天地 · 江北商圈<span class="local">惠城区江北</span></h3>
+    <p class="one">市区业态最全的购物中心，返程前若还想补点东西，来这里最省事。</p>
+    <div class="tagline"><span class="tag">商场</span><span class="tag">餐饮齐全</span></div>
+    <div class="meta">
+      <span><b>适合买</b> 服饰 / 美妆 / 伴手礼专柜</span>
+      <span><b>位置</b> 惠城区华贸天地（含负一层）</span>
+    </div>
+    <p>
+      惠州体量最大、品牌最齐的商业综合体之一。地下一层有蔡澜点心等餐饮，逛街吃饭一趟解决。
+      如果你习惯在商场买手信（比老街的包装更规整、更好携带），这里比水东街合适。
+    </p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('惠州华贸天地', 23.11200, 114.41500, 'https://j.map.baidu.com/huamaotiandi')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/huamaotiandi" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>港惠新天地<span class="local">惠城区河南岸</span></h3>
+    <p class="one">离 Day 4 出发动线更近的一处商场，适合返程当天上午的最后一逛。</p>
+    <div class="tagline"><span class="tag">商场</span><span class="tag">返程顺路</span></div>
+    <div class="meta">
+      <span><b>适合买</b> 服饰 / 小吃 / 现烤点心</span>
+      <span><b>位置</b> 惠城区河南岸片区</span>
+    </div>
+    <p>
+      惠州热门商场，集美食、购物于一体。里面有现烤蛋挞、椰子鸡等，属于"逛着逛着吃一顿"的类型。
+      它的价值在于位置——在惠城区南部，往平潭机场方向走时不绕路。
+    </p>
+    <div class="acts">
+      <button class="nav-btn" onclick="openVenueNav('港惠新天地', 23.08000, 114.42500, 'https://j.map.baidu.com/ganghuixintiandi')">导航</button>
+      <a class="act-lk" href="https://j.map.baidu.com/ganghuixintiandi" target="_blank" rel="noopener">百度地图</a>
+    </div>
+  </div>
+
+  <h3 class="sub-h" style="margin-top:26px">伴手礼一览<span>What to Bring Back</span></h3>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>伴手礼</th><th>是什么</th><th>去哪买</th><th>参考价</th><th>携带注意</th></tr></thead>
+      <tbody>
+        <tr><td>惠州梅菜</td><td>地理标志产品，腌制芥菜，扣肉与蒸肉饼的灵魂</td><td>水东街杂货 / 华贸天地超市</td><td class="pr">¥15–40 / 袋</td><td>真空包装可托运；散装注意密封防串味</td></tr>
+        <tr><td>梅菜饼干</td><td>把梅菜做成咸甜口饼干，本地人气手信</td><td>百分饼局（西湖店）</td><td class="pr">¥30–60 / 盒</td><td>易碎，随身携带别放托运</td></tr>
+        <tr><td>东江盐焗鸡</td><td>真空装成品，加热即食</td><td>宴东江等东江菜馆 / 商超</td><td class="pr">¥60–120 / 只</td><td>必须真空+冷藏；飞行超过 3 小时不建议带</td></tr>
+        <tr><td>罗浮山凉茶 / 药材</td><td>罗浮山出产的中草药与凉茶包</td><td>罗浮山景区售货点 / 惠州药店</td><td class="pr">¥20–80</td><td>液体茶包限随身 100ml 以内；药材需保留原包装</td></tr>
+        <tr><td>荔枝干 / 龙眼干</td><td>岭南传统果干，耐放好带</td><td>水东街 / 商超</td><td class="pr">¥25–60 / 斤</td><td>最省心的手信，常温托运无限制</td></tr>
+        <tr><td>客家酿豆腐真空装</td><td>预制客家菜，回家可复热</td><td>大型超市</td><td class="pr">¥20–40</td><td>需冷藏；短途方可考虑</td></tr>
+        <tr><td>惠州文创 / 东坡周边</td><td>东坡主题书签、明信片等</td><td>西湖景区文创店</td><td class="pr">¥20–80</td><td>轻便，最适合当伴手礼</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="sec-lead" style="margin-top:-4px">
+    <span class="warn">生鲜类（鲜荔枝、鲜龙眼、海产品）不要带上飞机</span>——9 月下旬荔枝已过季，
+    龙眼尚在尾期，且鲜果与海鲜都不能随身携带。想带就选果干或真空装，别在机场被拦下。
+  </p>
+</div></section>
+
+<section id="tips"><div class="wrap">
+  <div class="sec-h">
+    <span class="sec-n">06</span>
+    <h2>当地贴士</h2>
+    <span class="en">Local Tips</span>
+  </div>
+  <p class="sec-lead">
+    惠州是个"看起来简单、实操有坑"的目的地。最大的坑只有一个：<b class="pl">没有地铁</b>。
+    其余几条都是实操型的，出发前花两分钟看完最划算。
+  </p>
+
+  <div class="card">
+    <h3>交通 · 没有地铁，只能靠车</h3>
+    <p class="one">这是惠州行前必须建立的第一个认知。</p>
+    <p>
+      惠州<b class="pl">全城没有地铁</b>，公共交通以公交和城际为主，景点之间普遍在 30–110 公里。
+      对你这条动线（惠城 → 博罗 → 惠东），<b class="pl">包车或网约车是唯一现实的选择</b>。
+      Day 3 从罗浮山到双月湾约 110 公里，是全程最长的一段，需提前约好车。
+    </p>
+    <div class="tbl-wrap" style="margin-top:11px">
+      <table class="tbl">
+        <thead><tr><th>路段</th><th>距离</th><th>车程</th><th>打车参考</th></tr></thead>
+        <tbody>
+          <tr><td>平潭机场 → 惠城区西湖</td><td>约 30 km</td><td class="t">40 分钟</td><td class="pr">¥85–100</td></tr>
+          <tr><td>惠城区 → 罗浮山</td><td>约 45 km</td><td class="t">1 小时</td><td class="pr">¥120–150</td></tr>
+          <tr><td>罗浮山 → 双月湾</td><td>约 110 km</td><td class="t">2 小时</td><td class="pr">¥300–380</td></tr>
+          <tr><td>双月湾 → 平潭机场</td><td>约 80 km</td><td class="t">1 小时 15 分</td><td class="pr">¥220–280</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      公交只适合城内短距离：惠州北站出站可乘 17 路直达西湖景区（<span class="pr">¥2</span>，约 40 分钟）；
+      惠州南站有 K3 路往巽寮湾方向，末班延至 <span class="t">21:00</span>。
+      查实时公交可在微信搜"惠州通出行"。
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>机场接驳 · 有个免费的东西很多人不知道</h3>
+    <p class="one">惠州机场开了多条跨市免费接驳快线，深圳方向的尤其好用。</p>
+    <p>
+      惠州平潭机场已开通深圳龙岗、深圳坪山、东莞松山湖、河源、汕尾五条<b class="pl">跨市免费接驳快线</b>，
+      双向对开、全程免费，<b class="pl">凭当日有效登机牌（纸质或电子版）即可乘坐</b>。
+      其中深圳坪山线每日往返 16 个班次，坪山候机楼最早 <span class="t">07:50</span> 发车、最晚 <span class="t">19:00</span>；
+      机场端最早 <span class="t">10:30</span> 往坪山、最晚 <span class="t">00:30</span>。
+      乘车点在惠州机场 T2 到达厅出口处的交通旅游服务中心。
+    </p>
+    <p class="meta">
+      <b>预约与咨询</b> 坪山点服务热线 18927303020 · 机场点 0752-2287666 ·
+      单程约 70 分钟，建议提前电话预约座位 · <b>来源</b> 惠州机场 / 惠州日报
+    </p>
+    <p>
+      值得留意的是：如果你的返程改成"先去深圳再飞"，这条<b class="pl">免费</b>快线能直接给你省掉一段打车费。
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>天气 · 9 月下旬还是夏天</h3>
+    <p class="one">白天气温仍在 30℃ 上下，且是台风季尾巴——防晒和防雨要同时准备。</p>
+    <p>
+      惠州 9 月下旬仍属夏末，白天炎热、日照强，午后偶有阵雨；同时处于<b class="pl">台风季末段</b>，
+      偶有台风外围影响。海边行程（双月湾、巽寮湾）对天气最敏感。
+    </p>
+    <p>
+      <b class="pl">穿搭</b>：短袖 + 长裤为主，备一件薄外套（罗浮山顶与海边夜晚风大）。
+      <b class="pl">必备</b>：防晒霜、遮阳帽、驱蚊液、一次性雨衣（比伞更适合海边）。
+      <span class="warn">若出发前有台风预警，海边那一晚与出海项目务必先确认能否改期</span>。
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>支付 · 完全不用带现金</h3>
+    <p class="one">境内行程，微信/支付宝通吃，这一点没有任何意外。</p>
+    <p>
+      惠州全城支持微信支付与支付宝，从便利店到大排档到景区门票都可以扫码。
+      只建议随身备 <span class="pr">¥100–200</span> 现金，应付少数老摊档或信号不好的地方。
+      门票建议提前在携程/同程买，多数景区<b class="pl">刷身份证或电子码直接入园</b>，不用换纸质票。
+    </p>
+    <p class="meta"><b>官方购票渠道</b> 携程 / 同程 / 各景区微信公众号 · 价格以平台实时公示为准</p>
+  </div>
+
+  <div class="card">
+    <h3>节假日与预订提醒</h3>
+    <p class="one">你的行程刚好卡在国庆之前的那个周末——不算高峰，但要提前。</p>
+    <p>
+      行程为 9/24–9/27，<b class="pl">不在</b>国庆（10/1 起）窗口内，避开了最挤的时段。
+      但有两处仍会紧张：<b class="pl">9/26 是周六</b>，双月湾海景房周末价会上浮且好房紧俏；
+      <b class="pl">9/27 下午返程</b>正值周日，京津城际与大兴机场线都会比平日忙。
+    </p>
+    <p>
+      <b class="pl">建议动作</b>：① 双月湾酒店尽早订并选可免费取消；② 提前订好 9/27 晚 19:00–21:00 段
+      北京南→天津的城际票；③ 机票价格波动大，去程 KN5307 与返程 KN5362 都建议尽早在航司官方渠道锁定。
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>安全 · 海边与夜市两条</h3>
+    <p class="one">惠州整体治安良好，风险主要在海上。</p>
+    <p>
+      <b class="pl">海边</b>：只在有救生员的海滩下水；<b class="pl">浮潜/潜水务必选有资质的俱乐部</b>，
+      确认教练资质与保险，不要在码头临时跟无证船家出海。离岸流与暗礁是惠东海域的主要风险。
+      <b class="pl">夜间</b>：水东街夜市人多，注意随身物品；打车用正规网约车平台，别上无标识的拉客车。
+    </p>
+    <p class="meta"><b>紧急电话</b> 报警 110 · 急救 120 · 火警 119 · 水上救援 12395</p>
+  </div>
+</div></section>
+
+<section id="unscheduled"><div class="wrap">
+  <div class="sec-h">
+    <span class="sec-n">07</span>
+    <h2>未安排的景点清单</h2>
+    <span class="en">Unscheduled</span>
+  </div>
+  <p class="sec-lead">
+    下面这些都在你每日行程锚点的 <b class="pl">30 公里半径</b>内、也确实值得去，但因为动线、时间或天气原因
+    没能排进四天里。勾选你想要的，页面会生成一段可直接粘给 AI 的行程调整请求。
+  </p>
+
+  <div class="unsch">
+    <div class="unsch-h">
+      <input type="checkbox" id="u1" data-name="双月湾情人堤" data-day="3" data-dist="约 3 km" data-dur="约 1 小时" data-link="https://j.map.baidu.com/qingrendi" data-why="双月湾景区内的礁石海堤，退潮时可走上礁石看海，是观景台之外另一个看双月湾的角度">
+      <h3><label for="u1">双月湾情人堤<span class="local">惠东县港口滨海旅游度假区</span></label></h3>
+    </div>
+    <div class="unsch-in">
+      <p class="why"><b>为何值得去</b>：双月湾景区内的礁石海堤，退潮时可走上礁石看海，是观景台之外另一个看双月湾的角度。</p>
+      <div class="meta">
+        <span><b>距 Day 3 锚点</b> 约 3 km</span>
+        <span><b>建议时长</b> 约 1 小时</span>
+        <span><b>评分</b> 携程 4.0</span>
+      </div>
+      <p class="why"><b>未排入原因</b>：与双月湾观景台看的是同一片海，时间有限时二选一即可，观景台视野更全。</p>
+      <div class="acts">
+        <button class="nav-btn" onclick="openVenueNav('双月湾情人堤', 22.60300, 114.90000, 'https://j.map.baidu.com/qingrendi')">导航</button>
+        <a class="act-lk" href="https://j.map.baidu.com/qingrendi" target="_blank" rel="noopener">百度地图</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="unsch">
+    <div class="unsch-h">
+      <input type="checkbox" id="u2" data-name="平海古城" data-day="3" data-dist="约 12 km" data-dur="约 1.5 小时" data-link="https://j.map.baidu.com/pinghaigucheng" data-why="始建于明代的军事要塞古城，是惠东沿海少见的完整城池遗存，比海滩多一层历史纵深">
+      <h3><label for="u2">平海古城<span class="local">惠东县平海镇东海村</span></label></h3>
+    </div>
+    <div class="unsch-in">
+      <p class="why"><b>为何值得去</b>：始建于明代的军事要塞古城，是惠东沿海少见的完整城池遗存，比海滩多一层历史纵深。</p>
+      <div class="meta">
+        <span><b>距 Day 3 锚点</b> 约 12 km</span>
+        <span><b>建议时长</b> 约 1.5 小时</span>
+        <span><b>评分</b> 携程 3.8</span>
+      </div>
+      <p class="why"><b>未排入原因</b>：Day 3 下午从罗浮山转场到双月湾已经是两小时车程，再加古城会赶不及日落。若你愿意放弃观景台日落，可换成它。</p>
+      <div class="acts">
+        <button class="nav-btn" onclick="openVenueNav('平海古城', 22.611352, 114.875248, 'https://j.map.baidu.com/pinghaigucheng')">导航</button>
+        <a class="act-lk" href="https://j.map.baidu.com/pinghaigucheng" target="_blank" rel="noopener">百度地图</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="unsch">
+    <div class="unsch-h">
+      <input type="checkbox" id="u3" data-name="海龟湾" data-day="4" data-dist="约 15 km" data-dur="约 1.5 小时" data-link="https://j.map.baidu.com/haiguiwan" data-why="国家级海龟自然保护区，也是海龟的传统产卵场，是惠东海岸线上唯一的生态型景点">
+      <h3><label for="u3">海龟湾<span class="local">惠东县港口镇大星山西南侧</span></label></h3>
+    </div>
+    <div class="unsch-in">
+      <p class="why"><b>为何值得去</b>：国家级海龟自然保护区，也是海龟的传统产卵场，是惠东海岸线上唯一的生态型景点。</p>
+      <div class="meta">
+        <span><b>距 Day 4 锚点</b> 约 15 km</span>
+        <span><b>建议时长</b> 约 1.5 小时</span>
+        <span><b>评分</b> 携程 4.2</span>
+      </div>
+      <p class="why"><b>未排入原因</b>：Day 4 上午要赶 12:50 的航班，去海龟湾会挤压去机场的缓冲时间。若你愿意改订晚一班或次日的航班，这里值得加。</p>
+      <div class="acts">
+        <button class="nav-btn" onclick="openVenueNav('海龟湾', 22.549427, 114.893604, 'https://j.map.baidu.com/haiguiwan')">导航</button>
+        <a class="act-lk" href="https://j.map.baidu.com/haiguiwan" target="_blank" rel="noopener">百度地图</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="unsch">
+    <div class="unsch-h">
+      <input type="checkbox" id="u4" data-name="磨子石公园" data-day="3" data-dist="约 8 km" data-dur="约 1 小时" data-link="https://j.map.baidu.com/mozishi" data-why="巽寮湾片区的奇石海岸，花岗岩海蚀地貌对着开阔海面，拍照质感很强，且免费">
+      <h3><label for="u4">磨子石公园<span class="local">惠东县巽寮湾</span></label></h3>
+    </div>
+    <div class="unsch-in">
+      <p class="why"><b>为何值得去</b>：巽寮湾片区的奇石海岸，花岗岩海蚀地貌对着开阔海面，拍照质感很强，且免费。</p>
+      <div class="meta">
+        <span><b>距 Day 3 锚点</b> 约 8 km</span>
+        <span><b>建议时长</b> 约 1 小时</span>
+      </div>
+      <p class="why"><b>未排入原因</b>：与双月湾、巽寮湾同属一段海岸线，Day 3 时间不够。Day 4 上午若起得早、且不住海边驱车前往，可以顺路看一眼。</p>
+      <div class="acts">
+        <button class="nav-btn" onclick="openVenueNav('磨子石公园', 22.70000, 114.73500, 'https://j.map.baidu.com/mozishi')">导航</button>
+        <a class="act-lk" href="https://j.map.baidu.com/mozishi" target="_blank" rel="noopener">百度地图</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="unsch">
+    <div class="unsch-h">
+      <input type="checkbox" id="u5" data-name="日出东山海礁石酒吧" data-day="3" data-dist="约 20 km" data-dur="约 2 小时" data-link="https://j.map.baidu.com/richudongshanhai" data-why="建在礁石上的网红酒吧与观景建筑群，含礁石廊桥、观光塔、礁石礼堂，是惠东最出片的日落机位之一">
+      <h3><label for="u5">日出东山海礁石酒吧<span class="local">惠东县东山海地段 213 县道</span></label></h3>
+    </div>
+    <div class="unsch-in">
+      <p class="why"><b>为何值得去</b>：建在礁石上的网红酒吧与观景建筑群，含礁石廊桥、观光塔、礁石礼堂，是惠东最出片的日落机位之一。</p>
+      <div class="meta">
+        <span><b>距 Day 3 锚点</b> 约 20 km</span>
+        <span><b>建议时长</b> 约 2 小时</span>
+        <span><b>门票</b> <span class="pr">¥78</span>（含礁石酒吧 + 观光塔 + 廊桥 + 礼堂）</span>
+      </div>
+      <p class="why"><b>未排入原因</b>：需要门票且傍晚时段人多，与双月湾观景台日落冲突。<span class="warn">需在"日出东山海"微信小程序预约</span>。</p>
+      <div class="acts">
+        <button class="nav-btn" onclick="openVenueNav('日出东山海度假区', 22.64000, 114.83000, 'https://j.map.baidu.com/richudongshanhai')">导航</button>
+        <a class="act-lk" href="https://j.map.baidu.com/richudongshanhai" target="_blank" rel="noopener">百度地图</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="unsch">
+    <div class="unsch-h">
+      <input type="checkbox" id="u6" data-name="泗洲塔" data-day="2" data-dist="位于 Day 2 动线内" data-dur="约 30 分钟" data-link="https://j.map.baidu.com/sizhouta" data-why="西湖平湖西侧的宋代古塔，登塔可鸟瞰惠州老城与西湖全景，是西湖的最佳俯瞰点">
+      <h3><label for="u6">泗洲塔<span class="local">惠城区宝塔路 惠州西湖景区内</span></label></h3>
+    </div>
+    <div class="unsch-in">
+      <p class="why"><b>为何值得去</b>：西湖平湖西侧的宋代古塔，登塔可鸟瞰惠州老城与西湖全景，是西湖的最佳俯瞰点。</p>
+      <div class="meta">
+        <span><b>距 Day 2 锚点</b> 就在西湖环线内</span>
+        <span><b>建议时长</b> 约 30 分钟</span>
+        <span><b>评分</b> 携程 4.6</span>
+      </div>
+      <p class="why"><b>未排入原因</b>：它其实就在 Day 2 的西湖环线上，只是登塔需要额外时间。<span class="warn">塔体是否开放登临随季节调整</span>，到现场先确认。</p>
+      <div class="acts">
+        <button class="nav-btn" onclick="openVenueNav('泗洲塔', 23.09400, 114.39600, 'https://j.map.baidu.com/sizhouta')">导航</button>
+        <a class="act-lk" href="https://j.map.baidu.com/sizhouta" target="_blank" rel="noopener">百度地图</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="unsch">
+    <div class="unsch-h">
+      <input type="checkbox" id="u7" data-name="丰渚园" data-day="2" data-dist="约 2 km" data-dur="约 40 分钟" data-link="https://j.map.baidu.com/fengzhuyuan" data-why="西湖五湖之一的古典园林，粉墙黛瓦、古朴素雅，是惠州最精致的一处岭南园林">
+      <h3><label for="u7">丰渚园<span class="local">惠城区下角二湖路</span></label></h3>
+    </div>
+    <div class="unsch-in">
+      <p class="why"><b>为何值得去</b>：西湖五湖之一的古典园林，粉墙黛瓦、古朴素雅，是惠州最精致的一处岭南园林。</p>
+      <div class="meta">
+        <span><b>距 Day 2 锚点</b> 约 2 km</span>
+        <span><b>建议时长</b> 约 40 分钟</span>
+        <span><b>开放时间</b> <span class="t">08:30–22:00</span></span>
+      </div>
+      <p class="why"><b>未排入原因</b>：本手册原本把它排在 Day 2 上午（11:30）。若你西湖走得慢，它是最先被挤掉的一站——但它离得很近，随时可补。</p>
+      <div class="acts">
+        <button class="nav-btn" onclick="openVenueNav('丰渚园', 23.099047, 114.393948, 'https://j.map.baidu.com/fengzhuyuan')">导航</button>
+        <a class="act-lk" href="https://j.map.baidu.com/fengzhuyuan" target="_blank" rel="noopener">百度地图</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="unsch">
+    <div class="unsch-h">
+      <input type="checkbox" id="u8" data-name="金带街历史街区" data-day="2" data-dist="约 1 km" data-dur="约 40 分钟" data-link="https://j.map.baidu.com/jindaijie" data-why="惠州旧城肌理保存最好的一条街，两侧是清末民初的民居与老商号，比水东街更安静、更本地">
+      <h3><label for="u8">金带街历史街区<span class="local">惠城区金带街</span></label></h3>
+    </div>
+    <div class="unsch-in">
+      <p class="why"><b>为何值得去</b>：惠州旧城肌理保存最好的一条街，两侧是清末民初的民居与老商号，比水东街更安静、更本地。</p>
+      <div class="meta">
+        <span><b>距 Day 2 锚点</b> 约 1 km</span>
+        <span><b>建议时长</b> 约 40 分钟</span>
+      </div>
+      <p class="why"><b>未排入原因</b>：它在 Day 2 已排为"朝京门 → 金带街"顺路一站。如果当天走得快，可以多留 30 分钟深入巷子。</p>
+      <div class="acts">
+        <button class="nav-btn" onclick="openVenueNav('金带街', 23.09900, 114.40100, 'https://j.map.baidu.com/jindaijie')">导航</button>
+        <a class="act-lk" href="https://j.map.baidu.com/jindaijie" target="_blank" rel="noopener">百度地图</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="unsch">
+    <div class="unsch-h">
+      <input type="checkbox" id="u9" data-name="南昆山" data-day="3" data-dist="约 75 km（超出 30 km 半径）" data-dur="一整天" data-link="https://j.map.baidu.com/nankunshan" data-why="龙门县的避暑名山，竹林与瀑布成群，温泉资源集中，是惠州另一条完全不同的山线">
+      <h3><label for="u9">南昆山<span class="local">龙门县</span></label></h3>
+    </div>
+    <div class="unsch-in">
+      <p class="why"><b>为何值得去</b>：龙门县的避暑名山，竹林与瀑布成群，温泉资源集中，是惠州另一条完全不同的山线。</p>
+      <div class="meta">
+        <span><b>距 Day 3 锚点</b> 约 75 km</span>
+        <span><b>建议时长</b> 一整天</span>
+        <span><b>住宿</b> 龙门南昆山竹溪山境温泉酒店（携程 4.6）</span>
+      </div>
+      <p class="why"><b>未排入原因</b>：<b>超出 30 公里半径</b>，且与罗浮山属同类"爬山"行程，四天里放两座山会挤压海边。列入这里只作为"下次专程去"的备忘。</p>
+      <div class="acts">
+        <button class="nav-btn" onclick="openVenueNav('南昆山', 23.634298, 113.885712, 'https://j.map.baidu.com/nankunshan')">导航</button>
+        <a class="act-lk" href="https://j.map.baidu.com/nankunshan" target="_blank" rel="noopener">百度地图</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="genbox">
+    <h3>把这几个点加进行程</h3>
+    <p>勾选上面任意几张卡，点下面按钮会生成一段结构化的调整请求。复制后粘给任意 AI，即可重新生成一份含这些景点的完整行程。</p>
+    <textarea id="genout" readonly placeholder="勾选上方景点后，点「生成编辑行程文字」，这里会出现可复制的请求文字。"></textarea>
+    <div class="btn-row">
+      <button class="btn" onclick="genPrompt()">生成编辑行程文字</button>
+      <button class="btn ghost" onclick="copyPrompt()">复制</button>
+      <span class="copy-msg" id="copymsg"></span>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p><b>惠州 4 天 3 晚 · 旅行手册</b> — 2026 年 9 月 24 日至 27 日，一人独行。</p>
+  <p>航段：去程 <b>KN5307</b> 北京大兴 20:55 → 惠州平潭 T2 23:50（<span class="pr">¥1460</span>）；返程 <b>KN5362</b> 惠州平潭 T2 12:50 → 北京大兴 16:05（<span class="pr">¥780</span>），当晚转高铁回天津。</p>
+  <p><b>配图来源</b>：Pexels（License 可商用）。部分图片为主题示意图，非该地点实拍。</p>
+  <p><b>数据来源</b>：携程（酒店与景点评分）、大众点评（餐厅）、同程 / VariFlight（航班时刻）、百度地图（坐标与位置）、惠州机场与惠州文旅官方发布（交通与开放信息）。</p>
+  <p><b>坐标说明</b>：境内使用 GCJ-02 火星坐标系，用于「导航」按钮唤起高德／百度／苹果地图。</p>
+  <p>门票、房价、营业时间与评分均为查询时点数据，<b>实际以各平台与门店实时公示为准</b>。航班时刻与票价随销售情况浮动，请以航司官方渠道为准。</p>
+  <p style="margin-top:14px">手册中的"未安排的景点清单"（第 7 模块）可勾选后一键生成行程调整请求，粘回任意 AI 即可重新排布。</p>
+</div></footer>
+
+<script>
+// ── 导航深链模块（整段内联，无依赖）──────────────────────────
+var NAV_REGION = 'domestic';
+var NAV_UA = (navigator.userAgent || '').toLowerCase();
+var NAV_IN_WEBVIEW = /micromessenger|xhs|xhsdiscover|discover\/|tiktok|aweme|weibo|qq\/|qqbrowser|alipayclient|dingtalk|lark|feishu|ucbrowser|baiduboxapp|toutiao|newsarticle/.test(NAV_UA);
+var NAV_IS_IOS = /ipad|iphone|ipod/.test(NAV_UA);
+var NAV_IS_MOBILE = /android|iphone|ipad|ipod|mobile/.test(NAV_UA);
+
+function navAmapApp(n, la, ln) { return (NAV_IS_IOS ? 'iosamap:' : 'androidamap:')
+  + '//viewMap?sourceApplication=travelguide&poiname=' + encodeURIComponent(n)
+  + '&lat=' + la + '&lon=' + ln + '&dev=0'; }
+function navAmapWeb(n, la, ln) { return 'https://uri.amap.com/marker?position=' + ln + ',' + la
+  + '&name=' + encodeURIComponent(n) + '&src=travelguide&coordinate=gcj02&callnative=0'; }
+function navBaiduApp(n, la, ln) { return 'baidumap://map/marker?location=' + la + ',' + ln
+  + '&coord_type=gcj02&title=' + encodeURIComponent(n) + '&content=' + encodeURIComponent(n)
+  + '&src=travelguide'; }
+function navBaiduWeb(n, la, ln) { return 'https://api.map.baidu.com/marker?location=' + la + ',' + ln
+  + '&coord_type=gcj02&title=' + encodeURIComponent(n) + '&content=' + encodeURIComponent(n)
+  + '&output=html&src=travelguide'; }
+function navApple(n, la, ln) { return 'https://maps.apple.com/?q=' + encodeURIComponent(n)
+  + '&ll=' + la + ',' + ln; }
+function navGoogleApp(n) { return 'comgooglemaps://?q=' + encodeURIComponent(n); }
+function navGoogleWeb(n) { return 'https://www.google.com/maps/search/?api=1&query='
+  + encodeURIComponent(n); }
+
+var NAV_PROVIDERS = {
+  amap:   { label: '高德地图',   app: navAmapApp,  web: navAmapWeb },
+  baidu:  { label: '百度地图',   app: navBaiduApp, web: navBaiduWeb },
+  google: { label: 'Google 地图', app: function (n) { return navGoogleApp(n); },
+            web: function (n) { return navGoogleWeb(n); } },
+  apple:  { label: '苹果地图',   app: null,        web: navApple }
+};
+var NAV_CHAIN = NAV_REGION === 'domestic' ? ['amap', 'baidu', 'apple'] : ['google', 'apple'];
+
+function navTryScheme(url, timeout) { // 返回 Promise<boolean>：页面被隐藏 = App 已打开
+  return new Promise(function (resolve) {
+    var settled = false;
+    function onHide() { if (!settled) { settled = true; cleanup(); resolve(true); } }
+    function cleanup() {
+      document.removeEventListener('visibilitychange', onHide);
+      window.removeEventListener('pagehide', onHide);
+    }
+    document.addEventListener('visibilitychange', onHide);
+    window.addEventListener('pagehide', onHide);
+    window.location.href = url;
+    setTimeout(function () { if (!settled) { settled = true; cleanup(); resolve(false); } },
+      timeout || 1800);
+  });
+}
+
+function openVenueNav(name, lat, lng, webLink) {
+  if (!lat || !lng) { window.open(webLink || navApple(name, 0, 0)); return; }
+  var first = NAV_PROVIDERS[NAV_CHAIN[0]];
+  if (NAV_IN_WEBVIEW || !NAV_IS_MOBILE) {
+    window.open(first.web(name, lat, lng));
+    return;
+  }
+  (function step(i) {
+    if (i >= NAV_CHAIN.length) { window.open(first.web(name, lat, lng)); return; }
+    var p = NAV_PROVIDERS[NAV_CHAIN[i]];
+    if (!p.app) { window.open(p.web(name, lat, lng)); return; }
+    navTryScheme(p.app(name, lat, lng)).then(function (opened) {
+      if (!opened) step(i + 1);
+    });
+  })(0);
+}
+// ── 导航深链模块结束 ──────────────────────────────────────────
+
+// ── 顶部导航高亮 ────────────────────────────────────────
+(function () {
+  var links = [].slice.call(document.querySelectorAll('.topnav a'));
+  var secs = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  function sync() {
+    var y = window.scrollY + 90, idx = 0;
+    for (var i = 0; i < secs.length; i++) { if (secs[i] && secs[i].offsetTop <= y) idx = i; }
+    links.forEach(function (a, i) { a.classList.toggle('on', i === idx); });
+  }
+  window.addEventListener('scroll', sync, { passive: true });
+  window.addEventListener('resize', sync);
+  sync();
+})();
+
+// ── 模块7：编辑行程 → 生成 AI 提示词 ──────────────────────
+(function () {
+  var boxes = [].slice.call(document.querySelectorAll('#unscheduled input[type=checkbox]'));
+  boxes.forEach(function (b) {
+    b.addEventListener('change', function () {
+      var card = b.closest('.unsch');
+      if (card) card.classList.toggle('pick', b.checked);
+    });
+  });
+})();
+
+function genPrompt() {
+  var picked = [].slice.call(document.querySelectorAll('#unscheduled input[type=checkbox]:checked'));
+  var out = document.getElementById('genout');
+  if (!picked.length) {
+    out.value = '请先勾选至少一个景点，再点此按钮。';
+    out.focus();
+    return;
+  }
+  var lines = [];
+  lines.push('请基于以下信息，重新生成一份【惠州 4 天 3 晚】的完整旅行手册（单页 HTML，七个模块：行程/景点/体验/餐饮住宿/购物/当地贴士/未安排的景点清单）。');
+  lines.push('');
+  lines.push('【目的地】广东惠州（境内，使用百度/高德地图与携程、大众点评评分）');
+  lines.push('【天数】4 天 3 晚，2026 年 9 月 24 日 – 9 月 27 日');
+  lines.push('【出行人】一人独行；持 PADI AOW 潜水证；偏好当地真实吃法，接受海鲜');
+  lines.push('【默认时间盒】08:00 出发，午餐 13:00–14:30，晚间可至 22:00–24:00；不含老人小孩');
+  lines.push('【航班（已定）】去程 KN5307 北京大兴 20:55 → 惠州平潭 T2 23:50；返程 KN5362 惠州平潭 T2 12:50 → 北京大兴 16:05，当晚转高铁回天津');
+  lines.push('');
+  lines.push('【当前每日安排概要】');
+  lines.push('Day 1（9/24 周四）抵达 · 夜落平潭：23:50 落地惠州平潭机场，00:40 入住惠城区西湖一带酒店，不安排活动。');
+  lines.push('Day 2（9/25 周五）西湖老城 · 苏东坡的一天：08:00 惠州西湖环线（苏堤—泗洲塔—九曲桥—孤山）→ 10:15 东坡园 · 东坡纪念馆 → 11:30 丰渚园 → 13:00 午餐（西湖东门老城片区）→ 14:30 朝京门与金带街 → 16:00 合江楼 → 17:30 水东街夜市 → 19:00 水东街晚餐 → 20:30 江边夜游。住宿：惠城区西湖/水东街一带。');
+  lines.push('Day 3（9/26 周六）罗浮山 · 岭南第一山：07:30 出发 → 08:40 朱明洞景区（冲虚观、黄龙古观）→ 10:30 乘索道上山 → 11:40 飞云顶 → 13:00 午餐（长宁镇/景区门口，农家窑鸡）→ 14:30 下山转场去双月湾（约 110 km，2 小时）→ 17:00 入住双月湾海景房 → 18:00 双月湾观景台看日落 → 19:30 海鲜明档晚餐 → 21:00 回住处。住宿：双月湾（惠东县港口镇）。');
+  lines.push('Day 4（9/27 周日）海边清晨 · 返程：05:40 双月湾日出（自愿）→ 07:30 早餐退房 → 08:15 出发去平潭机场（约 80 km，1 小时 15 分）→ 10:45 抵达机场值机 → 12:50 KN5362 起飞 → 16:05 落地北京大兴 → 转高铁回天津。');
+  lines.push('');
+  lines.push('【我希望加入的景点（来自未安排清单）】');
+  picked.forEach(function (b, i) {
+    lines.push((i + 1) + '. ' + b.dataset.name
+      + '｜距 ' + 'Day ' + b.dataset.day + ' 锚点 ' + b.dataset.dist
+      + '｜建议时长 ' + b.dataset.dur
+      + '｜地图 ' + b.dataset.link
+      + '｜说明：' + b.dataset.why);
+  });
+  lines.push('');
+  lines.push('【明确指令】');
+  lines.push('请把以上景点合理安排进某一天。若原行程的时间不够，请提示「可在第 X 天增加一日安排」，或建议压缩/调整其他某天的哪些景点，再重新生成完整的七模块 HTML 手册。');
+  lines.push('注意：模块 1「行程」中的餐食与住宿只写片区范围，不出现具体店名（店名统一放第 4 模块）；模块 4 的餐饮与住宿必须给出可搜索到的具体名称与评分来源。');
+  out.value = lines.join(String.fromCharCode(10));
+  out.focus();
+  out.select();
+}
+
+function copyPrompt() {
+  var out = document.getElementById('genout');
+  var msg = document.getElementById('copymsg');
+  if (!out.value.trim()) { genPrompt(); }
+  if (!out.value.trim()) return;
+  out.removeAttribute('readonly');
+  out.select();
+  out.setSelectionRange(0, out.value.length);
+  var ok = false;
+  try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+  out.setAttribute('readonly', 'readonly');
+  if (ok) {
+    msg.textContent = '已复制';
+  } else if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(out.value).then(function () {
+      msg.textContent = '已复制';
+    }, function () { msg.textContent = '请手动全选复制'; });
+  } else {
+    msg.textContent = '请手动全选复制';
+  }
+  setTimeout(function () { msg.textContent = ''; }, 2400);
+}
+</script>
+</body>
+</html>
